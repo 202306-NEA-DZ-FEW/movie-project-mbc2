@@ -1,3 +1,4 @@
+import Navbar from "@/components/navbar"
 import Image from "next/image"
 import Link from "next/link"
 import { AiOutlineSearch } from "react-icons/ai"
@@ -15,47 +16,7 @@ export default function MainLayout({ children }) {
             <div className="w-full h-32  absolute bottom-0  bg-gradient-to-t from-black to-transparent"></div>
           </div>
         </div>
-        <nav className="flex flex-row py-4 items-center justify-between">
-          <Link href={"/"}>
-            <Image
-              src="/logo.svg"
-              alt="Re:watch logo"
-              width={140}
-              height={100}
-            />
-          </Link>
-          <div className="">
-            <ul>
-              <li className="inline-block px-4 py-2">
-                <Link href={"/"}>Home</Link>
-              </li>
-              <li className="inline-block px-4 py-2">
-                <Link href={"/about"}>Discover</Link>
-              </li>
-              <li className="inline-block px-4 py-2">
-                <Link href={"/contact"}>Movie releases</Link>
-              </li>
-              <li className="inline-block px-4 py-2">
-                <Link href={"/contact"}>About</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-row  w-56 justify-between">
-            <AiOutlineSearch className="text-2xl" />
-            <Link
-              href={"#"}
-              className="border border-white rounded-md px-3 py-1 flex items-center"
-            >
-              Sign up
-            </Link>
-            <Link
-              href={"#"}
-              className="bg-green-600 rounded-md px-3 flex py-1 items-center"
-            >
-              Sign up
-            </Link>
-          </div>
-        </nav>
+        <Navbar />
       </section>
       <main className="py-10">{children}</main>
       <footer>
