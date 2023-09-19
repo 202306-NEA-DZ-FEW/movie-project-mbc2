@@ -3,13 +3,15 @@ import MovieCard from '@/component/movieCard';
 import { fetcher } from '@/util/api';
 import MainLayout from '@/layouts/mainLayout';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-export default function MoviePage({ moviedata }) {
+export default function GenreMoviesPage({ moviedata }) {
+    const router = useRouter();
     console.log("moviedata walidddddd:", moviedata)
     return (
         <MainLayout>
-            {/* <h2>{name}MOVIES</h2>
-            <hr className='my-4'></hr> */}
+            <h2 className='text-2xl my-8 font-bold'>{router.query.prop1.toUpperCase()} MOVIES</h2>
+            {/* <hr className='my-4'></hr> */}
             <div className="flex flex-row flex-wrap gap-6 justify-around">
 
                 {moviedata.results.map((movie, index) => (

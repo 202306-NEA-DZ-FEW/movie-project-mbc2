@@ -4,14 +4,14 @@ import MovieCard from '@/component/movieCard';
 import Link from 'next/link';
 import { fetcher } from '@/util/api';
 
-export default function NowPlaying({ allMovies }) {
+export default function Popular({ allMovies }) {
     console.log('moviesprom :', allMovies)
     // // console.log("geea3 movies :", allMovies)
     // console.log("id :", id)
     return (
         <MainLayout>
-            {/* <h2>{name}MOVIES</h2>
-            <hr className='my-4'></hr> */}
+            <h2 className='text-2xl my-8 font-bold'>POPULAR MOVIES</h2>
+            {/* <hr className='my-4'></hr> */}
             <div className="flex flex-row flex-wrap gap-6 justify-around">
 
                 {allMovies.results.map((movie, index) => (
@@ -24,8 +24,8 @@ export default function NowPlaying({ allMovies }) {
 
     )
 }
-export async function getServerSideProps(context) {
-    const { movielist } = context.query
+export async function getStaticProps() {
+
     const data = await fetcher(`movie/popular?language=en-US&page=1`);
 
     return {
@@ -35,3 +35,4 @@ export async function getServerSideProps(context) {
     }
 
 }
+
