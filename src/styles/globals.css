@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: white;
+  background: black;
+}
+
+.brd {
+  border: 1px solid #fff;
+}
